@@ -22,7 +22,7 @@ public class SimpleTest extends MpApplicationTests {
         user.setName("丁茂义");
         user.setAge(40);
         user.setEmail("dmy@baomidou.com");
-        user.setManagerId(1088248166370832385L);
+        user.setManagerId(2);
         user.setCreateTime(new Date());
         int rows = userMapper.insert(user);
         System.out.println("影响记录数：" + rows);
