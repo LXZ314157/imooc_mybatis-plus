@@ -16,6 +16,7 @@ public class SimpleTest extends MpApplicationTests {
     @Autowired
     private UserMapper userMapper;
 
+    //新增一条记录里
     @Test
     public void insert() {
         User user = new User();
@@ -29,6 +30,7 @@ public class SimpleTest extends MpApplicationTests {
         System.out.println("主键：" + user.getId());
     }
 
+    //查询所有记录列表
     @Test
     public void select() {
         List<User> userList = userMapper.selectList(null);
