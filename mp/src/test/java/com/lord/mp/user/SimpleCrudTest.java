@@ -115,11 +115,11 @@ public class SimpleCrudTest extends MpApplicationTests {
         System.out.println(list);
     }
 
-    //======条件构造器查询
+    //======condition查询
     @Test
     public void testCondition(){
         String name = "王";
-        String email = "";
+        String email = "@";
         condition(name,email);
     }
 
@@ -131,5 +131,42 @@ public class SimpleCrudTest extends MpApplicationTests {
         System.out.println(list);
     }
 
+
+    @Test
+    public void testConditionWithEntity(){
+
+        //条件构造器传入实体对象
+//        User user = new User();
+//        user.setName("张三丰").setEmail("3423");
+//        QueryWrapper<User> queryWrapper = new QueryWrapper<>(user);
+//        List<User> list = userMapper.selectList(queryWrapper);
+//        System.out.println(list);
+
+        //返回结果是List<Map<String,Object>>类型 只会显示值不为null的字段
+//        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+//        queryWrapper.select("id","name").like("name","张").eq("age",40);
+//        List<Map<String,Object>> mapList = userMapper.selectMaps(queryWrapper);
+//        System.out.println(mapList);
+
+        //查询返回记录行数
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("name","张").eq("age",40);
+        Integer count = userMapper.selectCount(queryWrapper);
+        System.out.println(count);
+    }
+
+
+    //统计查询
+    @Test
+    public void testFunction(){
+//        11、按照直属上级分组，查询每组的平均年龄、最大年龄、最小年龄。并且只取年龄总和小于500的组。
+//        select avg(age) avg_age,min(age) min_age,max(age) max_age from user
+//        group by manager_id having sum(age) <500
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("avg(age) avg_age","min(age) min_age","max(age) max_age")
+                .groupBy("manager_id").having("sum(age)<{0}",300);
+        List<Map<String,Object>> mapList = userMapper.selectMaps(queryWrapper);
+        System.out.println(mapList);
+    }
 
 }
