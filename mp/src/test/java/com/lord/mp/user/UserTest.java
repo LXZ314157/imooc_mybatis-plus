@@ -33,7 +33,7 @@ public class UserTest extends MpApplicationTests {
         User user = new User();
         user.setName("张无忌");
         user.setAge(30);
-        user.setManagerId(1088248166370832385L);
+        user.setManagerId(5);
         user.setCreateTime(new Date());
         int rows = userMapper.insert(user);
         System.out.println("影响记录数：" + rows);
@@ -42,7 +42,7 @@ public class UserTest extends MpApplicationTests {
     // @Test
     public void updateById() {
         User user = new User();
-        user.setId(1134013564424658946L);
+        user.setId(6);
         user.setEmail("zwj@baomidou.com");
         int rows = userMapper.updateById(user);
         System.out.println("影响记录数：" + rows);

@@ -6,16 +6,17 @@ spring:
     password: 123!@#
 
 mybatis-plus:
-  # config-location: classpath:mybatis-config.xml
+#   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mapper/**/*Mapper.xml #指定mapper.xml的位置
   type-aliases-package: com.lord.mp.entity
   global-config:
     db-config:
       id-type: uuid
 
+#设置日志打印级别（打印sql语句）
 logging:
   level:
     root: warn
     com.lord.mp.dao: trace
   pattern:
-    console: '%p%m%n' #p:级别 m:内容 n:换行 
+    console: '%p%m%n' #p:级别 m:内容 n:换行

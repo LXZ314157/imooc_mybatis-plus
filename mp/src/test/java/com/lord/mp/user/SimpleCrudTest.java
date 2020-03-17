@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
 /**
- * 简单的crud操作
+ * Mapper层的简单的crud操作
  */
 public class SimpleCrudTest extends MpApplicationTests {
 

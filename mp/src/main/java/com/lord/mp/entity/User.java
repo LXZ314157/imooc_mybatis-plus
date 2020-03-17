@@ -36,6 +36,7 @@ public class User extends Model<User> {
 
     /**
      * 姓名 value为该属性对应的数据库表中的字段名称
+     * SqlCondition.LIKE 在设置queryWrapper查询时类似like的作用
      */
     @TableField(value = "name", condition = SqlCondition.LIKE)
     private String name;
