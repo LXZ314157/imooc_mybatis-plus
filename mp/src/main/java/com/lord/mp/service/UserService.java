@@ -5,4 +5,5 @@ import com.lord.mp.entity.User;
 
 public interface UserService extends IService<User> {
 
+
 }
