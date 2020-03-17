@@ -25,4 +25,6 @@ public interface UserMapper extends BaseMapper<User> {
 
     IPage<User> selectUserPage(Page<User> page, @Param(Constants.WRAPPER) Wrapper<User> wrapper);
 
+    User getUserInfo(Integer id);
+
 }

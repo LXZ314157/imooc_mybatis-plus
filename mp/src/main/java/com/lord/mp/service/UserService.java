@@ -5,5 +5,6 @@ import com.lord.mp.entity.User;
 
 public interface UserService extends IService<User> {
 
+    User getUserInfo(Integer id);
 
 }

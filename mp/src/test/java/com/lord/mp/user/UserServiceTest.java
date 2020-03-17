@@ -108,4 +108,11 @@ public class UserServiceTest extends MpApplicationTests {
         System.out.println(JSON.toJSONString(pageInfo));
     }
 
+    //普通的查询
+    @Test
+    public void commonSelecct(){
+        User user = userService.getUserInfo(6);
+        System.out.println(user);
+    }
+
 }
